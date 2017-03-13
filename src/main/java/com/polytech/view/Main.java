@@ -2,6 +2,7 @@ package com.polytech.view;
 
 import com.polytech.business.Post;
 import com.polytech.business.PublicationService;
+import com.polytech.business.PublicationServiceImp;
 import com.polytech.repository.PostRepository;
 import com.polytech.repository.PostRepositoryImp;
 
@@ -15,7 +16,7 @@ public class Main {
         System.out.println("Coucou Moi !!!");
 
         PostRepository postRepo = new PostRepositoryImp();
-        PublicationService publicationService = new PublicationService(postRepo);
+        PublicationService publicationService = new PublicationServiceImp(postRepo);
         Post post = new Post("Coucou Moi");
         Post post2 = new Post("Coucou Moi 2");
 
