@@ -1,6 +1,7 @@
 package com.polytech.business;
 
 import com.polytech.repository.PostRepository;
+import com.polytech.repository.PostRepositoryImp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +13,12 @@ public class PublicationService {
      private PostRepository postRepository ;
     private List<Post> db = new ArrayList<Post>();
 
-    public PublicationService(){
-        postRepository = new PostRepository();
+    public PublicationService(PostRepository postRepo)
+    {
+        postRepository = postRepo;
     }
 
-    public PublicationService(PostRepository postRepo) {
-    postRepository = postRepo;
-    }
+
 
     public void post(Post post) {
         postRepository.save(post);
